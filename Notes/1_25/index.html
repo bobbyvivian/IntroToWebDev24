@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>HTML Elements 101</title>
+    </head>
+
+    <body>
+        <h1 id="top">Most important text on the page. Should only be 1 h1 per page. </h1>
+        <!-- We have h1-h6, these are all more important than paragraph text -->
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <hr> <!-- horizontal line -->
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <em>Fusce pharetra condimentum metus, nec vulputate sem sodales eget.</em>
+            Sed id ornare orci, sit amet euismod diam. Maecenas ut pulvinar nunc. Morbi id ullamcorper magna. Duis et massa at nisl ultrices 
+            cursus sed at erat. Proin consequat, tortor et finibus ultricies, felis ante lobortis lectus, non mattis dolor tortor in purus.
+            Nulla gravida malesuada faucibus. In mi justo, cursus nec massa et, tincidunt aliquam tortor. Ut fringilla maximus bibendum. 
+            Integer quis posuere nibh.<br><br><strong>Duis pretium mauris et turpis hendrerit sagittis. </strong>Vivamus tincidunt cursus lobortis. Sed posuere, 
+            diam ut pharetra posuere, quam eros porta augue, sed tempor nisi nunc nec felis. Aliquam scelerisque leo vitae orci bibendum, 
+            eget tempus justo eleifend.
+        </p>
+
+        <h2>Buttermilk Pancakes</h2>
+        <p>description of this amazing recipe</p>
+
+        <h3>Ingredients</h3>
+        <!-- Unordered list, order not important -->
+        <ul>
+            <!-- Individual items in list -->
+            <li>1 cup flour</li>
+            <li>1 cup milk</li>
+            <li>1 stick of butter</li>
+            <li>2 tbsp sugar</li>
+            <li>1 egg</li>
+            <li>
+                spices
+                <ul>
+                    <li>cinnamon</li>
+                    <li>nutmeg</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3>Instructions</h3>
+        <!-- ordered lists care about some sort of order notation -->
+        <ol>
+            <li>Combine ingredients</li>
+            <li>Mix well</li>
+            <li>
+            more steps
+                <ol>
+                    <li>count to ten</li>
+                    <li>flip the pancake</li>
+                </ol>
+            </li>
+        </ol>
+
+        <!-- anchor tags are links to other locations on the same page, other pages on the same site, 
+        or other pages on any site -->
+        <!-- href is the reference to the link -->
+        <!-- target: _blank: open in new blank tab, _self: open in this tab, defaults to _self-->
+        <a href="https://sugarspunrun.com/buttermilk-pancakes/" target="_blank">Link to a real pancake recipe</a>
+
+        <br>
+        <img 
+            src="https://hips.hearstapps.com/hmg-prod/images/best-homemade-pancakes-index-640775a2dbad8.jpg?crop=0.503xw:1.00xh;0.235xw,0&resize=1200:*"
+            width="50%"
+            alt="Buttermilk pancakes with syrup"
+            title="Buttermilk Pancakes"
+        /> <br>
+
+        <a href="About/index.html">About page</a>
+        <a href="boilerplate.html">Boiler Plate</a>
+        <a href="#top">Back to top of page</a>
+    </body>
+</html>
