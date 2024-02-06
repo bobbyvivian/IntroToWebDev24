@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Intro to CSS</title>
+        <style type="text/CSS">
+            /* universal selector to zero out default margins or padding */
+            * {
+                margin: 0;
+            }
+            /* tag selector applies to every instance of tag on the page*/
+            p {
+                /* 1rem = 16px */
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                margin-left: 0.5rem;
+                color: #f50;
+                /* #f50 same as #ff5500 */
+                font-family:Arial, Helvetica, sans-serif;
+            }
+
+            a {
+                color:inherit;
+                text-decoration: none;
+            }            
+
+            .sillyText {
+                font-family: fantasy;
+                font-weight: 800;
+            }
+
+            .indented {
+                text-indent: 20%;
+            }
+
+            .align_right {
+                text-align: right;
+                text-decoration: underline;
+            }
+
+            .align_justified {
+                text-align: justify;
+            }
+
+            #important {
+                font-weight: 600;
+                font-size: x-large;
+                font-style: oblique;
+                line-height: 1.5;
+                text-transform: uppercase;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 style="margin: 10px 20px; color: blueviolet">Displays Block</h1>
+
+        <!-- 1em = 16px -->
+        <p class="align_right">
+            <span class="sillyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span> Fusce id quam suscipit felis vehicula suscipit. Sed ac erat porta, blandit massa id, consectetur elit. Vestibulum vitae ante eget enim semper dignissim non aliquet risus. In lectus augue, molestie eget lacus et, laoreet vehicula arcu. Ut nec cursus massa, vitae vestibulum nisl. Fusce dolor quam, sagittis vitae nibh nec, ultrices porta justo. Sed laoreet sollicitudin ipsum vitae tincidunt. Pellentesque at tincidunt velit, quis dapibus dolor. Cras luctus tortor arcu, a sollicitudin mauris dictum non. In blandit vehicula pellentesque. Phasellus eu venenatis leo. Donec id diam eu tortor eleifend blandit. In vel nisi eget tortor varius lobortis. Pellentesque risus augue, laoreet a ultrices et, pellentesque at velit. Vestibulum commodo iaculis sem, vitae ultrices dui consectetur id.
+        </p>
+
+        <p id="important" class="align_justified">
+            <a href="#">Proin efficitur tortor ligula, in lacinia</a> ipsum condimentum in. Nunc pharetra condimentum venenatis. Nunc non nibh molestie, malesuada ligula vitae, facilisis lacus. Vivamus at ornare nisl, ac eleifend sapien. Nullam mattis scelerisque velit, vel eleifend urna fermentum id. Sed tristique urna eu turpis fermentum tristique. Vivamus consectetur mi quis sapien faucibus facilisis. Phasellus eu lacinia lacus, ut laoreet dolor. Maecenas finibus est non dui efficitur, at tempor purus lacinia.
+        </p>
+
+        <p class="indented">
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras a efficitur sapien, ut iaculis dolor. Suspendisse ac erat aliquet, auctor ipsum venenatis, aliquet enim. Quisque in ultrices ligula. In auctor nisi in purus eleifend, sit amet scelerisque leo elementum. Vivamus ac faucibus augue. Proin aliquet rutrum laoreet. Curabitur feugiat dapibus malesuada. Suspendisse porta rhoncus neque, a placerat nunc aliquet a. Mauris dictum molestie fringilla. Proin sit amet ligula eget dolor dapibus pretium eget ac ex. Nullam ornare interdum neque, quis imperdiet lorem bibendum ut. Aenean tempor auctor rhoncus. Ut lectus urna, ornare malesuada porta at, venenatis ut quam.
+        </p>
+    </body>
+</html>

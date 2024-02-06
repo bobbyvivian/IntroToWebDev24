@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Simple Navbar</title>
+        <!-- internal style sheet -->
+        <style type="text/CSS">
+            @import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: "Protest Riot", cursive;
+            }
+
+            ul {
+                /* remove bullets, defaults to disk */
+                list-style-type: none;
+                overflow: hidden;
+                background-color: cornflowerblue;
+                /* make the parent elements font size zero when using inline block
+                to get rid of tiny space between letters because inline is usually for text */
+                font-size: 0;
+            }
+
+            li {
+                /* li display BLOCK by default, they don't want to share horizontal space with 
+                any other elements. We are making LI display inline-block which gives us the benefits of  */
+                display: inline-block;
+                font-size: 1rem;
+            }
+            /* descendant selector is looking for this pattern */
+            li a {
+                display: block;
+                text-align: center;
+                /* make it a big chunky clickable area, not just text itself */
+                width: 100px;
+                padding: 10px;;
+                /* remove default a tag styling */
+                text-decoration: none;
+                /* change link color */
+                color: chartreuse;
+            }
+
+            /* highlight the active page in menu */
+            li a.active {
+                background-color: aquamarine;
+            }
+
+            li a:hover {
+                background-color: rgba(0,0,0,0.1);
+                color: #fff;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a class="active" href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                </ul>
+            </nav>
+        </header>
+    </body>
+</html>
