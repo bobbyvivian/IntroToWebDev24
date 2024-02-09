@@ -1,0 +1,114 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regualr', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Geneva, Tahoma, sans-serif;
+    padding: 20px 50px 150px 50px;
+    text-align: center;
+    background-color: #e8e3f4;
+}
+
+a {
+    text-decoration: none;
+    color: #4e1d6f;
+}
+
+main {
+    background-color: #c2b6e1;
+    width: 100%;
+    height: 175vh;
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+}
+
+#mainbar {
+    background-color: bisque;
+    position: absolute;
+    width: 65%;
+    height: 90%;
+    padding-right: 20px;
+    padding-left: 20px;
+    left: 10px;
+    text-align: left;
+}
+
+aside {
+    background-color: antiquewhite;
+    position: absolute;
+    width: 25%;
+    height: 90%;
+    right: 10px;
+}
+
+aside a {
+    padding: 20px;
+    display: block;
+}
+
+aside form {
+    padding: 20px;
+    display: block;
+    border: none;
+    position: relative;
+    width: 75%;
+}
+
+fieldset {
+    border: none;
+}
+
+#breadImg {
+    width:20%;
+}
+
+.nav {
+    display: inline;
+    margin: 0;
+    padding: 15px 4px 17px 0px;
+    list-style-type: none;
+    box-shadow: 0,0,5px rgba(0,0,0,.15);
+}
+
+.nav li {
+    font: bold 12px/18px sans-serif;
+    display: inline-block;
+    position: relative;
+    padding: 15px 20px;
+    background-color: #fff;
+    /* makes it look clickable */
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nav li:hover {
+    background-color: #f9d5c6;
+    color: #fff;
+}
+
+.nav li ul {
+    padding: 0;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 150px;
+    box-shadow: none;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.9s;
+}
+.nav li ul li {
+    background: #555;
+    display: block;
+    color: #fff;
+    text-shadow: 0 -1px 0 #000;
+}
+
+.nav li ul li:hover {
+    background: #666;
+}
+
+.nav li:hover ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
