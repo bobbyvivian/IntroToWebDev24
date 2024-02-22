@@ -1,0 +1,150 @@
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(255, 236, 237);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Desktop First Styling Approach */
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 0 2rem;
+    position: relative;
+}
+
+header h1 {
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.brand {
+    margin: 0;
+    font-weight: 300;
+}
+
+header a {
+    color: #3d1a1a;
+    text-decoration: none;
+}
+
+/* hiding on desktop, will show on mobile */
+.mobile-menu {
+    display: none;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu li {
+    min-width: 5rem;
+}
+
+.menu li a {
+    /* nice and chunky to click */
+    display: block;
+    padding: 1rem;
+}
+
+.clicked {
+    background-color: rgb(222, 162, 162);
+}
+
+.menu li a:hover {
+    transition: all .5s ease-in-out;
+    color: #e3bbbb;
+    background-color: rgb(123, 77, 77);
+    cursor: pointer;
+}
+
+.grid-container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.grid-item {
+    background-color: rgb(240, 215, 198);
+    flex: 0 0 23%;
+    margin: 2rem auto;
+    padding: 2rem;
+    line-height: 1.5rem;
+}
+
+/* Tablet Sized Screen */
+@media screen and (min-width: 768px) and (max-width:1024px) {
+    body {
+        background-color: rgb(163, 214, 174);
+    }
+
+    .thumb {
+        flex: 0 0 45%;
+        margin: 1 rem auto;
+    }
+}
+
+/* Mobile Phone Sized Screens */
+@media screen and (max-width: 768px) {
+    body {
+        background-color: cadetblue;
+    }
+
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        text-align: center;
+        padding: 0;
+    }
+
+    .brand {
+        margin: .5rem;
+    }
+
+    .mobile-menu {
+        display: block;
+        color: #aaa;
+        font-size: 2rem;
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu li {
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .thumb {
+        flex: 1 1 100;
+        margin: 1rem auto;
+    }
+}
