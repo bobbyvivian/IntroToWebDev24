@@ -1,0 +1,162 @@
+/* Global */
+
+/* Take into account borders and padding into our set dimensions of any box */
+* {
+    box-sizing: border-box;
+}
+
+/* zero out annoying margin on the page */
+html, body {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Desktop First Styling */
+
+/* Jumbotron */
+
+/* div with the class hero bc theres no space */
+div.hero {
+    width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.hero article {
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    width: 50%;
+    padding: 2%;
+    background: linear-gradient(
+        90deg, 
+        rgba(255,0,0,0.5) 0%, 
+        rgba(255,0,0,0.2) 100%
+    );
+}
+
+button, a.info {
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 1s ease;
+    width:10rem;
+    text-align: center;
+    /* purely for the anchor tag */
+    text-decoration: none;
+}
+
+button:hover, a.info:hover {
+    background-color: rgb(236, 234, 234);
+    border: 2px solid rgb(197, 197, 197);
+    color: #333;
+    text-transform: lowercase;
+}
+
+/* Gallery */
+div.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.thumb {
+    position: relative;
+    /* same thing as: flex: 0 0 30% and width: 30%; */
+    /* whatever way u choose to style width, make it consistent across media queries */
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 30%;
+    overflow: hidden;
+    margin: 24px auto;
+}
+
+/* prepare initial state for our image transform */
+.thumb img {
+    transform: scale(1);
+    rotate: 0deg;
+    transition: all 1s ease;
+}
+
+.thumb:hover img {
+    transform: scale(1.5) rotate(-20deg);
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255,255,255,0.5);
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.mask h2 {
+    margin: 0;
+}
+
+.mask p {
+    font-style: italic;
+}
+
+/* hovering over thumb div, apply properties to mask */
+.thumb:hover .mask {
+    opacity: 1;
+}
+
+/* set up initial text scale for transforms */
+.thumb .mask .h2, 
+.thumb .mask p, 
+.thumb .mask a {
+    opacity: 0;
+    transform: scale(0);
+    transition: all 1s ease-in-out;
+}
+
+.thumb:hover .mask .h2, 
+.thumb:hover .mask p, 
+.thumb:hover .mask a {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Media Queries */
+
+/* Tablet Size */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .hero article {
+        width: 75%;
+    }
+    .thumb {
+        flex-basis: 45%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        flex-direction: column;
+        padding: 12pxp;
+    }
+
+    .hero article {
+        flex-basis: 95%;
+    }
+}

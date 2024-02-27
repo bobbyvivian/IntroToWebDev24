@@ -3,28 +3,33 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vivian Teo - Personal</title>
+    <title>Vivian Teo's Portfolio</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
   </head>
   <body>
     <header>
-      <h1 class="brand">Vivian Teo</h1>
+      <h1 class="brand">vivian teo</h1>
       <!-- hide this on larger screens with CSS -->
       <span class="mobile-menu">&#8801;</span>
       <nav>
         <ul class="menu">
-            <li><a ref="./index.html">Projects</a></li>
-            <li><a ref="./personal.html" class="clicked">Personal</a></li>
-            <li><a ref=".about.html">About</a></li>
+          <li><a href="./index.html" class="clicked">Projects</a></li>
+          <li><a href="./personal.html">Personal</a></li>
+          <li><a href="./about.html">About</a></li>
         </ul>
       </nav>
     </header>
 
     <main class="grid-container">
         <!-- Image of project -->
-        <div class="grid-item"><img src="#" alt="Project Image"></div>
+        <div class="grid-item img">
+          <img src="https://placehold.co/500" alt="Project Image">
+          <article class="mask">
+            <a class="info" href="#">Go to Project</a>
+          </article>
+        </div>
         <!-- Project description -->
-        <div class="grid-item">
+        <div class="grid-item text">
             https://editor.p5js.org/bobbybobbb/full/GXHue1nTs
             <br>
             A bunch of text
