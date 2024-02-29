@@ -19,8 +19,18 @@ img {
     height: auto;
 }
 
-/* Desktop First Styling Approach */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
+/* Desktop First Styling Approach */
 header {
     display: flex;
     flex-direction: row;
@@ -81,6 +91,7 @@ header a {
 }
 
 .grid-container {
+    animation: 2s ease-in-out slideInLeft;
     padding: 2rem, 8rem;
     margin: 2rem;
     display: flex;
@@ -92,14 +103,12 @@ header a {
 .grid-item {
     position: relative;
     flex: 0 0 40%;
-    margin: 2rem auto;
     overflow: hidden;
 }
 
 .grid-item.text {
     padding: 2rem;
     line-height: 1.5rem;
-
 }
 
 /* overlay color for when you hover */
@@ -120,7 +129,6 @@ header a {
 
 .grid-item.img:hover .mask {
     opacity: 1;
-    cursor: pointer;
 }
 
 /* link to go to project */
@@ -132,7 +140,7 @@ header a {
     text-decoration: none;
     color: #3d1a1a;
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 400;
     opacity: 0;
     transition: all 1s ease-in-out;
 }
@@ -149,10 +157,49 @@ header a {
     overflow: hidden;
 }
 
+#about-description {
+    padding: 0;
+}
+
 .mask h2 {
     margin: 0;
 }
 
+footer {
+    background-color:  rgb(246, 220, 221);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #461e1e;
+    padding: .75rem 2rem;
+    position: relative;
+}
+
+.contact {
+    margin: 0;
+    display: inline-block;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.footer-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-menu li {
+    min-width: 5rem;
+    padding-left: 1rem;
+}
+
+.footer-menu li a {
+    text-decoration: none;
+    color: #632a2a;
+}
 
 /* Tablet Sized Screen */
 @media screen and (min-width: 768px) and (max-width:1024px) {
