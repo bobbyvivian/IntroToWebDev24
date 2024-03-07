@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Dynamic DOM, 2ways</title>
+        <style type="text/css">
+            #content {
+                color: red;
+            }
+
+            @media screen and (max-width: 767px) {
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- not a good method -->
+        <button onclick="addSingleP()">Add a single paragraph using strings</button>
+        <!-- the right method for injecting stuff into html -->
+        <button onclick="addMultiP()">
+            Add multiple paragraphs using DOM node
+        </button>
+
+        <div id="content">
+            <p>This sum dummy text that'll be overwritten by innerHTML</p>
+        </div>
+
+        <script type="text/javascript">
+            // declare our content variable globally
+            var content;
+            // this will work globally bc the script tag is after the body's content
+            content = document.getElementById('content');
+
+            function addSingleP() {
+                content.innerHTML = '<p class="bad">This is a poorly written p tag</p>'
+            }
+
+            // proper dynamic dom manipulation
+            function addMultiP() {
+                // start our loop
+                for (var i=0; i<9; i++) {
+                    // create a p element node
+                    var p = document.createElement('P');
+                    // create text node to go inside our p node
+                    var text = document.createTextNode(
+                        'this is paragraph number ' + i + ' created witih nodes.'
+                    );
+                    // append the text to the p
+                    p.appendChild(text);
+                    // appened the p to our content div
+                    content.appendChild(p);
+                }
+            }
+
+        </script>
+    </body>
+</html>
