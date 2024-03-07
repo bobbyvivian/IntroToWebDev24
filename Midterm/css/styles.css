@@ -122,6 +122,7 @@ header a {
     overflow: hidden;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    align-items: center;
 }
 
 /* overwriting for personal page */
@@ -167,16 +168,25 @@ header a {
     transition: all 1s ease-in-out;
 }
 
+.art-text {
+    margin: .2rem;
+}
+
+.art-heading {
+    margin: 0.5rem;
+}
+
+.art-button {
+    margin: 0.5rem;
+}
+
 .grid-item.img:hover .mask a {
     opacity: 1;
 }
 
 #about-description {
     padding: 0;
-}
-
-.mask h2 {
-    margin: 0;
+    line-height: 1.5rem;
 }
 
 footer {
