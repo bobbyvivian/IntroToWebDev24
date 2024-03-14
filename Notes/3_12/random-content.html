@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro to Arrays</title>
+    <script type="text/javascript">
+        var arrImg = [
+            "https://images.pexels.com/photos/7067065/pexels-photo-7067065.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt_p7_Oi8fXT0OIYg6P6ApKjaxXFrCRp2g3RNt3JHEP_RzuqpFxrtRH-0j8lBYQ599WGg&usqp=CAU",
+            "https://media.wired.com/photos/593261cab8eb31692072f129/master/pass/85120553.jpg"
+        ];
+
+        var arrLink = [
+            "",
+            "",
+            ""    
+        ]
+
+        // helper function for picking random num in array
+        function randomIndex(max) {
+            return Math.floor(Math.random()*max)
+        }
+
+        function loadRandImg() {
+            var index = randomIndex(arrImg.length)
+            var img = document.getElementById("animal");
+            var link = document.getElementById("dynLink")
+            img.src=arrImg[index];
+            link.href=arrLink[index];
+        }
+
+        // wait for page to finish rendering all dom elements
+        document.addEventListener('DOMContentLoaded', loadRandImg);
+    </script>
+  </head>
+
+  <body>
+    <a href="#" id="dynLink"><img src="" id="animal"/></a>
+  </body>
+</html>

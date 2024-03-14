@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Math Methods</title>
+    <script type="text/javascript">
+        const myText = "This is text that never changes";
+        let myVar;
+        // Integers: whole numbers
+        var x = 15; var y = 35; var z;
+        z = 10.5; // float
+
+        // addition
+        console.log(x+y);
+        // subtraction
+        console.log(x-y);
+        // multiplication
+        console.log(x*y);
+        // division
+        console.log(x/y);
+
+        // modular operator % returns the division remainder
+        // this is really helpful when we want to use odd/even or every nth number
+        console.log(10%3);
+
+        // just like in algebra, order matters!
+        console.log((x+y)*y-1);
+
+        // increments
+        // x++
+
+        // decrements
+        // x--
+
+        // increment by certain num
+        // x+=2
+        // x-=2
+
+        // basic Math functions
+        var k = 2.25
+        // Math.floor will round DOWN to nearest int
+        var kDown = Math.floor(k);
+        console.log(kDown);
+        // Math.ceil will round UP to nearest int
+        var kUp = Math.ceil(k);
+        console.log(kUp);
+        // Math.round will round up or down based on decimal
+        var num1 = 2.2;
+        var num2 = 2.7;
+        console.log(Math.round(num1));
+        console.log(Math.round(num2));
+
+        // Math.random() returns a floating point num between 0 and 1
+        console.log(Math.random());
+        var yn = Math.round(Math.random()); // return 0 or 1
+
+        if (yn === 0) {
+            console.log('false');        
+        }
+        else {
+            console.log('true');
+        }
+
+        // Random number between 0 and n
+        // We are going to need a function that takes a parameter that we can change each time we call this func
+
+        function randNum(n) {
+            var rn = Math.round(n*Math.random())
+            console.log(rn);
+        }
+        // useful for grabbing random item from array
+        randNum(15);
+
+        var test;
+        function randNumRange(min,max) {
+            return Math.round(Math.random() * (max-min) + min);
+        }
+
+        var rand1 = randNumRange(20,30);
+        var rand2 = randNumRange(33,47);
+        console.log("rand1: "+rand1, "rand2: "+rand2)
+
+    </script>
+  </head>
+
+  <body>
+
+  </body>
+</html>

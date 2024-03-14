@@ -91,7 +91,7 @@ header a {
 }
 
 .grid-container {
-    /* animation: 2s ease-in-out slideInLeft; */
+    animation: 2s ease-in-out slideInLeft;
     padding: 2rem, 8rem;
     margin-top: 2rem;
     margin-right: 12rem;
@@ -130,7 +130,7 @@ header a {
     flex: 0 0 31%;
 }
 
-.grid-item .text {
+.grid-item,.text {
     line-height: 1.5rem;
 }
 
@@ -207,6 +207,11 @@ footer {
     font-style: italic;
 }
 
+.contact-icon:hover {
+    transition: all 0.5s ease-in-out;
+    opacity: 70%;
+}
+
 .footer-menu {
     list-style-type: none;
     padding: 0;
@@ -233,6 +238,10 @@ footer {
     .grid-item {
         flex: 0 0 45%;
         margin: 1 rem auto;
+    }
+
+    .one-col .grid-item {
+        flex: 0 0 95%;
     }
 }
 
@@ -263,6 +272,7 @@ footer {
         position: absolute;
         top: 0.5rem;
         right: 1rem;
+        cursor: pointer;
     }
 
     .menu {
