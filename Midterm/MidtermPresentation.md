@@ -1,5 +1,5 @@
 # Project:
-My portfolio consists of a nav bar with 3 different pages: Projects, Personal, and About. All of them have different layouts for content, and when you resize the page, they all react differently.
+My portfolio consists of a nav bar with 3 different pages: Projects, Personal, and About. All of them have different layouts for content, and when you resize the page, they all react differently. The images and text are in and I made sure to include a lot of hover effects for interactivity.
 
 
 # Code Snippet: Using keyframes 
