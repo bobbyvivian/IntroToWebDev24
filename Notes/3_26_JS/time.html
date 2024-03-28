@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro to Arrays</title>
+    <script type="text/javascript">
+
+      let counter = 0
+      // call this function every second or whatever
+      function intervalTest() {
+        let p = document.getElementById('timeElasped')
+        p.innerHTML = counter
+        counter += 5
+      }
+
+      window.setInterval(intervalTest, 500)
+
+    </script>
+  </head>
+
+  <body>
+    <p id="timeElapsed">
+      this will go away once the function overrides innerhtml
+    </p>
+</body>
+</html>

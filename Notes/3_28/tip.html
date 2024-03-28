@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro to Arrays</title>
+    <style type="text/css">
+        .container {
+            width: 100p;
+            padding: 10px 9W;
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('calcBtn').addEventListener('click', calcTip)
+        })
+
+        function calcTip(event) {
+            // stop the page from refreshing/reloading w
+            event.preventDefault()
+            // grab output div to display output to user
+            let result = document.getElementById('tipResult')
+            // grab value from bill input
+            let bill = document.getElementById('bill').value
+            // remember input values, even if are numbers come in strings
+            bill = parseFloat(bill)
+
+            // find selected tip percentage from our array of radio buttons
+            // declare a few variables first
+            let per // user selected tip percentage
+            let tip // per * bill
+            let total // bill + tip
+
+            let arrTip = document.getElementById('tip')
+            // loop through all of the inputs in our nodelist and find the radio input with checked attribute = true
+            for (var i = 0; i<arrTip.length; i++) {
+                if (arrTip[i].checked) {
+                    per = parseFloat(arrTip[i].value)
+                    // once we find a checked element, we can stop the loop
+                    break
+                }
+            }
+            // calc tip
+            tip = moneyRound(bill*per)
+            total = bill+tip
+
+            let p1 = document.createElement('P')
+            let p2 = document.createElement('P')
+            let p3 = document.createElement('P')
+            let p4 = document.createElement('P')
+
+            // 4 text nodes with the info we need to display and append
+            let t1 = document.createTextNode('Bill is $'+bill)
+            let t2 = document.createTextNode('Typ percentage is '+per)
+            let t3 = document.createTextNode('Calculated tip: $'+tip)
+            let t4 = document.createTextNode('Total: $'+total)
+
+            // add text nodes to p tags, append p tags to output divs
+            p1.appendChild(t1)
+            p2.appendChild(t2)
+            p3.appendChild(t3)
+            p4.appendChild(t4)
+
+            // append p tags to output div
+            result.append(p1)
+            result.append(p2)
+            result.append(p3)
+            result.append(p4)
+
+        }
+
+        function moneyRound(num) {
+            return Math.ceil(num * 100)/100
+        }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+        <h1>Tip Calculator</h1>
+    
+        <form>
+            <label for="bill">Enter the value of your bill here</label>
+            <input type="number" name="bill" id="bill" min="0" step="0.01" required/>
+
+            <br>
+            <!-- notice that all of our radio buttons have the same name, different values -->
+            <label><input type="radio" name="tip" value="0.05" checked/>5%</label>
+            <label><input type="radio" name="tip" value="0.05" checked/>10%</label>
+            <label><input type="radio" name="tip" value="0.05" checked/>15%</label>
+            <label><input type="radio" name="tip" value="0.05" checked/>20%</label>
+
+            <button type="button" name="">Caluculate Tip</button>
+        </form>
+
+        <div id="tipResult"></div>
+    </div>
+  </body>
+</html>
