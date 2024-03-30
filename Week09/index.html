@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vivian Teo's Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  </head>
+  <body>
+    <header>
+      <h1 class="brand">vivian teo</h1>
+      <!-- hide this on larger screens with CSS -->
+      <span class="mobile-menu">&#8801;</span>
+      <nav>
+        <ul class="menu">
+          <li><a href="./index.html" class="clicked">Projects</a></li>
+          <li><a href="./personal.html">Personal</a></li>
+          <li><a href="./about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="grid-container one-col">
+      <!-- Project 1 -->
+        <!-- Image of project -->
+        <div class="grid-item img">
+          <img class="img-size" src="./img/big_wave.GIF" alt="Project Image">
+          <article class="mask">
+            <a class="info" target="_blank" href="https://editor.p5js.org/bobbybobbb/full/JaVEFg_uJ">Go to Project</a>
+          </article>
+        </div>
+        <!-- Project description -->
+        <div class="grid-item text">
+          Interactive piece about time and nostalgia created using p5.js. Upon playing the sketch, the user sees animated waves coming up to shore and moving back rhythmically. These sounds and images remind me a lot of home and a happier time because my parents are originally from a tropical island. When the user presses “Enter”, footprints appear on the sand, but eventually, they get washed away by the big wave. This interactive component is supposed to represent how nothing lasts. I drew all the images (waves, footprints, beach items) so that the sketch feels more cohesive as a whole and to create a more raw feeling; you can see the individual brush strokes, as if care was put into each part of the sketch. 
+        </div>
+
+      <!-- Project 2 -->
+        <!-- Image of project -->
+        <div class="grid-item img">
+          <img src="./img/nycmap.GIF" alt="Project Image">
+          <article class="mask">
+            <a class="info" target="_blank" href="https://editor.p5js.org/bobbybobbb/full/GXHue1nTs">Go to Project</a>
+          </article>
+        </div>
+        <!-- Project description -->
+        <div class="grid-item text">
+          Interactive story piece about NYC and the places I grew up going to. During the beginning, users should be able to see a map of Manhattan and Brooklyn with clickable location pins. These pins will take users to pages with information about these locations and a background animation of specific parts of these locations drawn by me. The information about these places includes more general fun facts and my personal memories. There’s a back button users can click to return to the map and navigate to other locations as well. Users can toggle the text so they can read or simply appreciate the background animations. 
+        </div>
+    </main>
+
+    <footer>
+      <h3 class="contact">contact me!</h3>
+      <ul class="footer-menu">
+        <li>
+          <a href="mailto:vivianteo950@gmail.com">
+            <img id="email" class="contact-icon" src="./img/email.png"/>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:vivianteo950@gmail.com">
+            <img id="linkedin" class="contact-icon" src="./img/linkedin.png"/>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:vivianteo950@gmail.com">
+            <img id="instagram" class="contact-icon" src="./img/instagram.png"/>
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+    <!-- JS -->
+    <script text="text/javascript" src="./script.js"></script>
+
+  </body>
+</html>
+

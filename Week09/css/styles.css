@@ -1,0 +1,306 @@
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(255, 236, 237);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Desktop First Styling Approach */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 0 2rem;
+    position: relative;
+}
+
+header h1 {
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.brand {
+    margin: 0;
+    font-weight: 300;
+}
+
+header a {
+    color: #3d1a1a;
+    text-decoration: none;
+}
+
+/* hiding on desktop, will show on mobile */
+.mobile-menu {
+    display: none;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu li {
+    min-width: 5rem;
+}
+
+.menu li a {
+    /* nice and chunky to click */
+    display: block;
+    padding: 1rem;
+}
+
+.clicked {
+    background-color: rgb(222, 162, 162);
+}
+
+.menu li a:hover {
+    transition: all .5s ease-in-out;
+    color: #e3bbbb;
+    background-color: rgb(123, 77, 77);
+    cursor: pointer;
+}
+
+.grid-container {
+    animation: 2s ease-in-out slideInLeft;
+    padding: 2rem, 8rem;
+    margin-top: 2rem;
+    margin-right: 12rem;
+    margin-left: 12rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* overwriting for personal page */
+.personal-container {
+    margin-right: 6rem;
+    margin-left: 6rem;
+}
+
+.personal-label {
+    margin: 0;
+    position: relative;
+    flex: 0 0 99%;
+    overflow: hidden;
+}
+
+.grid-item {
+    position: relative;
+    flex: 0 0 47%;
+    overflow: hidden;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+/* overwriting for personal page */
+.personal {
+    flex: 0 0 31%;
+}
+
+.grid-item,.text {
+    line-height: 1.5rem;
+}
+
+/* overlay color for when you hover */
+.mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(231, 171, 171, 0.5);
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.grid-item.img:hover .mask {
+    opacity: 1;
+}
+
+/* link to go to project */
+.mask a {
+    padding: 10px 20px;
+    border: 2px solid rgb(237, 224, 224);
+    border-radius: 5px;
+    background-color: #e7e7e7;
+    text-decoration: none;
+    color: #3d1a1a;
+    font-size: 20px;
+    font-weight: 400;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.art-text {
+    margin: .2rem;
+}
+
+.art-heading {
+    margin: 0.5rem;
+}
+
+.art-button {
+    margin: 0.5rem;
+}
+
+.grid-item.img:hover .mask a {
+    opacity: 1;
+}
+
+#about-description {
+    padding: 0;
+    line-height: 1.5rem;
+}
+
+footer {
+    background-color:  rgb(246, 220, 221);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #461e1e;
+    padding: .75rem 2rem;
+    position: relative;
+}
+
+.contact {
+    margin: 0;
+    display: inline-block;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.footer-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-menu li {
+    min-width: 5rem;
+}
+
+.footer-menu li a {
+    text-decoration: none;
+    color: #632a2a;
+}
+
+.contact-icon {
+    width: 2rem;
+}
+
+/* Tablet Sized Screen */
+@media screen and (min-width: 768px) and (max-width:1024px) {
+    .grid-item {
+        flex: 0 0 45%;
+        margin: 1 rem auto;
+    }
+
+    .one-col .grid-item {
+        flex: 0 0 95%;
+    }
+}
+
+/* Mobile Phone Sized Screens */
+@media screen and (max-width: 768px) {
+    body {
+        background-color: rgb(242, 199, 196);
+        flex-direction: column;
+    }
+
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        text-align: center;
+        padding: 0;
+        order: 1;
+    }
+
+    .brand {
+        margin: .5rem;
+    }
+
+    .mobile-menu {
+        display: block;
+        color: #aaa;
+        font-size: 2rem;
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        cursor: pointer;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu li {
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    header a {
+        background-color: rgb(247, 223, 223);;
+    }
+
+    .clicked {
+        background-color: rgb(222, 162, 162);
+    }
+
+    .grid-container {
+        padding: 0;
+        margin: 1rem;
+        flex-direction: column;
+        order:2;
+        align-items: center;
+    }
+
+    .grid-item {
+        width: 90%;
+    }
+
+    .thumb {
+        flex: 1 1 100;
+        margin: 1rem auto;
+    }
+}
