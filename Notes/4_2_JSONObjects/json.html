@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Objects</title>
+
+    <script type="text/javascript">
+        let customer = {
+            name: 'Tony',
+            age: 23,
+            married: false,
+            pets: ['dog', 'cat', 'iguana'],
+            siblings: [
+                {name: 'Mary', age:32, married: true},
+                {name: 'Billy', age:16, married: false},
+            ],        
+        }
+
+        customer.pets.push('chicken')
+        customer.siblings[0].pets = ['snail', 'spider']
+
+        // stringify 
+        const customerJSON = JSON.stringify(customer)
+        console.log(customerJSON)
+
+        const customerObject = JSON.parse(customerJSON)
+        console.log(customerObject)
+
+        async function logAPIResults() {
+            // await: wait for the promise, don't execute past this line until response has proper value
+            const response = await fetch('https://rickandmortyapi.com/api/character/5'); // returns nothing fir .3333 sec
+            const myAPIData = await response.json()
+            const message = `${myAPIData.name} is a ${myAPIData.species} from ${myAPIData.origin.name} and he is ${myAPIData.status}`
+            return(message)
+        }
+
+        console.log(logAPIResults())
+
+        // in class exercise
+        // quote
+        async function displayQuote() {
+            const response = await fetch('https://api.quotable.io/quotes/random');
+            const quoteData = await response.json();
+
+            let quote = document.createTextNode(`${quoteData.content} By: ${quoteData.author}`)
+            let div1 = document.getElementById("exercise1")
+            div1.appendChild(quote)
+        }
+        displayQuote()
+
+        // Display a random users information. Be sure to display the users:
+        // First Name, Last Name
+        // Username
+        // Mailing Address
+        // Any other information you’d like to display from the returned JSON
+        // random user:
+        async function displayUser() {
+            const response = await fetch('https://randomuser.me/api/');
+            const userData = await response.json();
+
+            let name = document.createTextNode(userData.results.name.first + " " + userData.results.name.last)
+            let div2 = document.getElementById("exercise2")
+            div2.appendChild(name)
+        }
+        displayUser()
+
+    </script>
+  </head>
+
+  <body>
+    <div id="exercise1"></div>
+    <div id="exercise2"></div>
+    <div id="exercise3"></div>
+  </body>
+</html>
