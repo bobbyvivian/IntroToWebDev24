@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geolocation</title>
+
+    <script type="text/javascript">
+        // declare location element div globally
+        let loc
+
+        document.addEventListener('DOMContentLoaded', () => {
+            getLocation()
+        })
+
+        const getLocation = () => {
+            // we need to check if we CAN get the location
+            if (navigator.geolocation && navigator.geolocation.getCurrentPosition) {
+                // checked if geolocation exists
+                // if true, we use to get current location
+                // once we have it, it will be passed into a callback func we write
+                navigator.geolocation.getCurrentPosition(setPosition)
+            }
+            else {
+                // we dont have access to geolocation or get current position so display alternative message
+                alert('your browser does not support geolocation')
+            }
+        }
+
+        const setPosition = (position) => {
+            console.log(position.coords.longitude)
+            console.log(position.coords.latitude)
+
+            const lat = position.coords.latitude
+            const lon = position.coords.longitude
+            const loc = document.getElementById('location')
+
+            loc.innerHTML = `Latitude: ${lat} <br> Longitude: ${lon}`
+        }
+
+        const showError = (error) => {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    loc.innerHTML = "user denied the request foor geolocation"
+                    break
+                case error.POSITION_UNAVAILABLE:
+                    loc.innerHTML = "location info unavailable"
+                    break
+                case error.TIMEOUT:
+                    loc.innerHTML = "the location request timed out"
+                    break
+                case errpr.UNKNOWN_ERROR: 
+                    loc.innerHTML = "an unknown error occured"
+                    break
+            }
+        }
+    </script>
+  </head>
+
+  <body>
+    <div id="location">
+        <p>Currently searching for location...</p>
+    </div>
+  </body>
+</html>
