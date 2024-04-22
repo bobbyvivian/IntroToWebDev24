@@ -1,0 +1,36 @@
+#pano {
+  float: left;
+  height: 90%;
+  width: 70%;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(255, 236, 237);
+}
+
+/* the Google Maps element showing the address, we don't want users seeing the answer */
+.gm-iv-address {
+    display: none;
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 400px;
+    justify-content: center;
+}
+
+.grid-item {
+    position: relative;
+    flex: 0 0 47%;
+    overflow: hidden;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}

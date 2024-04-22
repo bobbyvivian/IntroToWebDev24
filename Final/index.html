@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fake GeoGuessr</title>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script text="text/javascript" src="./script.js"></script>
+
+  </head>
+
+  <body>
+    <header>
+        <h1>Fake GeoGuessr</h1>
+    </header>
+
+    <!-- start of grid -->
+    <main class="grid-container">
+        <!-- LEFT HAND SIDE: USER INPUT -->
+        <div class="grid-item">
+            text
+        </div>
+        <!-- STREET VIEW MAP -->
+        <div class="grid-item">
+            <div id="pano"></div>
+        </div>
+    </main>
+
+    <!-- Google Maps API -->
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDj6dQ3oFJhGhFfc7YKBa8ICylQv4KTPxA&loading=async&callback=initialize">
+    </script>
+    <!-- JS -->
+  </body>
+</html>
