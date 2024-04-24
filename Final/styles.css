@@ -22,15 +22,18 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    min-height: 400px;
+    min-height: 500px;
     justify-content: center;
 }
 
 .grid-item {
     position: relative;
-    flex: 0 0 47%;
+    flex: 0 0 48%;
     overflow: hidden;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
     align-items: center;
+}
+
+/* display none for now, change when correct/wrong in JS */
+.correct {
+    display: none;
 }

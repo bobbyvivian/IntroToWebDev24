@@ -21,9 +21,23 @@
     <main class="grid-container">
         <!-- LEFT HAND SIDE: USER INPUT -->
         <div class="grid-item">
-            text
+            <p>Rules</p>
+            <div id="country">Country</div>
+
+            <input type="text" id="guess" list="dropdown" placeholder="country"/>
+            <datalist id="dropdown">
+              <!-- Using JS to populate with options -->
+            </datalist>
+            <button type="button" id="submitBtn">
+                Submit
+            </button>
+
+            <!-- Display correct or not -->
+            <div id="correct">              
+              <!-- populate with JS, correct/wrong -->
+            </div>
         </div>
-        <!-- STREET VIEW MAP -->
+        <!-- RIGHT HAND SIDE: STREET VIEW MAP -->
         <div class="grid-item">
             <div id="map"></div>
             <div id="pano"></div>

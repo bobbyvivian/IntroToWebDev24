@@ -1,23 +1,82 @@
+document.addEventListener('DOMContentLoaded', function() {  
+  // populate the dropdown menu for country names
+  // get the dropdown datalist element
+  const dropdown = document.getElementById("dropdown")
+  // for each country
+  geoData.forEach((data) => {
+    // create a new option element
+    let option = document.createElement("option")
+    // make the value attribute the country name
+    option.value = data.country
+    // add the option to the dropdown
+    dropdown.appendChild(option)
+  })
+
+  // USER INPUT SECTION
+  // listen for when submit button gets clicked and check if correct
+  let submitBtn = document.getElementById('submitBtn')
+  submitBtn.addEventListener('click', checkCorrect)
+
+  // function that checks and displays correctness
+  function checkCorrect() {
+    // when they submit, get their answer
+    let userInput = document.getElementById('guess')
+    // ignore case basically
+    let answer = userInput.value.toLowerCase()
+
+    // prepare to display correct section:
+    let correctSection =  document.getElementById("correct")
+    correctSection.style.display = 'block'
+    // check if their answer matches right answer
+    if (answer == country.toLowerCase()) {
+      // CORRECT
+      // clear out any text from before
+      correctSection.innerHTML = ''
+      // add correct text
+      correctSection.appendChild(document.createTextNode('Correct!'))
+    }
+    else {
+      // WRONG
+      // clear out any text from before
+      correctSection.innerHTML = ''  
+      // add wrong text    
+      correctSection.appendChild(document.createTextNode('Wrong!'))
+    }
+  }
+})
+
+// GLOBAL VARs:
+// var that contains correct answer to be accessed and checked later
+var country = "";
+// boolean for if user is correct
+var correct = false;
 // COUNTRIES/COORDS DATA
 const geoData = [  
-    {country:"Qatar", cont: "Asia", lat:25.272234, lng: 51.421210},
+    {country:"Qatar", cont: "Asia", lat: 25.272234, lng: 51.421210},
     {country:"United States of America", cont: "North America", lat: 40.668083, lng: -73.978557 },
-    {country:"Canada", cont: "North America", lat:49.166786, lng: -122.801385},  
-  ]
+    {country:"Canada", cont: "North America", lat: 49.166786, lng: -122.801385},  
+    {country:"Russia", cont: "Asia", lat: 55.761226, lng: 37.594540},
+    {country:"Kenya", cont: "Africa", lat: 0.552119, lng: 35.306452},
 
-function testing() {
-  const geoLength = geoData.length
-  var randInd = Math.floor(Math.random() * geoLength)
-  console.log(geoData[randInd].country)
-  console.log(geoData[randInd].lat)
-  console.log(geoData[randInd].lng)
-}
-// testing()
+    // {country:"", cont: "", lat: , lng: },
+    // {country:"", cont: "", lat: , lng: },
+    // {country:"", cont: "", lat: , lng: },
+    // {country:"", cont: "", lat: , lng: },
+    // {country:"", cont: "", lat: , lng: },
+    // {country:"", cont: "", lat: , lng: },
+    // {country:"", cont: "", lat: , lng: },
 
+]
+
+// GETTING THE STREET VIEW SET UP AND WORKING, ASYNC
 async function initialize() {
     // generate random coords with function
-    // var coords = randomCoord()
-    var coords = { lat:  40.676738, lng: -74.005930 }
+    var coordData = randomCoord()
+
+    // store the answer in this variable
+    country = coordData.country
+    // store the lat and lng so street view can display
+    var coords = { lat:  coordData.lat, lng: coordData.lng }
     console.log(coords)
 
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -42,27 +101,18 @@ async function initialize() {
   
 window.initialize = initialize;
 
-// generate random number in a range with fixed deximals
-// function getRandomInRange(from, to, fixed) {
-//     return (Math.random() * (to - from) + from).toFixed(fixed) * 1;
-// }
-
-// generate and return random latitude and longitude
-async function randomCoord() {
-    // FAKE RANDOM
-
-    // GENERATE RANDOM COORDS WITH ALG METHOD
-    // const latitude = getRandomInRange(-90,90,6)
-    // const longitude = getRandomInRange(-180,180,6)
-    // return {lat: latitude, lng: longitude}
-
-    // GET RANDOM COORDS FROM API METHOD
-    // const response = await fetch(
-    //     'https://api.3geonames.org/?randomland=DE'
-    // )
-    // const result = await response.json()
+// generate and return random coordinates + country
+function randomCoord() {
+    // RANDOM COORD FROM AN ARRAY OF DATA
+    const geoLength = geoData.length
+    var randInd = Math.floor(Math.random() * geoLength)
+    // return country, latitude, longitude in array form to access in initialize()
+    return {
+      country: geoData[randInd].country, 
+      lat: geoData[randInd].lat, 
+      lng: geoData[randInd].lng
+    }
 }
-randomCoord()
 
 /*
 NOTES/HARDSHIPS:
@@ -72,6 +122,16 @@ address pops up with street view via api so i went into inspect to find the elem
 }
 
 generating random coordinates, have to fake randomness
+*/
+
+/*
+NEXT STEPS AS I KEEP WORKING 
+*/
+
+/*
+COOl FEATURES I FOUND DURING PROCESS, SHARE WITH CLASS
+- goog maps api
+- datalist and options: dropdown menu for user input
 */
 
 /* 
