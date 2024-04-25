@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {  
-  // populate the dropdown menu for country names
+  // populate the dropdown menu for country names section:
+
   // get the dropdown datalist element
   const dropdown = document.getElementById("dropdown")
   // for each country
@@ -25,8 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let answer = userInput.value.toLowerCase()
 
     // prepare to display correct section:
-    let correctSection =  document.getElementById("correct")
+    let correctSection = document.getElementById("correct")
     correctSection.style.display = 'block'
+
+    // update points (increase total by 1)
+    let pointsSection = document.getElementById("points")
+    points.total += 1; 
+
     // check if their answer matches right answer
     if (answer == country.toLowerCase()) {
       // CORRECT
@@ -34,6 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
       correctSection.innerHTML = ''
       // add correct text
       correctSection.appendChild(document.createTextNode('Correct!'))
+
+      // update points (increase the num of correct by 1)
+      points.correct += 1;
     }
     else {
       // WRONG
@@ -42,14 +51,57 @@ document.addEventListener('DOMContentLoaded', function() {
       // add wrong text    
       correctSection.appendChild(document.createTextNode('Wrong!'))
     }
+    
+    // DISPLAY POINTS by populating the HTML
+    pointsSection.innerHTML = "POINTS: " + points.correct + "/" + points.total
+  }
+
+  // REGENERATE BUTTON SECTION
+  let regenBtn = document.getElementById('regenBtn')
+  regenBtn.addEventListener('click', regen)
+
+  // CLEAR OUT THE TEXT IN USER INPUT SECTION
+  // regenerate new map function
+  function regen() {
+        // generate random coords with function
+        var coordData = randomCoord()
+
+        // store the answer in this variable
+        country = coordData.country
+        // store the lat and lng so street view can display
+        var coords = { lat:  coordData.lat, lng: coordData.lng }
+    
+        // create map
+        var map = new google.maps.Map(document.getElementById("map"), {
+            center: coords,
+            zoom: 14,
+        });
+        // create new street view and adjust the coords, pov
+        var panorama = new google.maps.StreetViewPanorama(
+          document.getElementById("pano"),
+          {
+            position: coords,
+            pov: {
+              heading: 34,
+              pitch: 10,
+            },
+          },
+        );      
+        // set the map to the street view
+        map.setStreetView(panorama);
   }
 })
 
 // GLOBAL VARs:
 // var that contains correct answer to be accessed and checked later
-var country = "";
+var country = ""
 // boolean for if user is correct
-var correct = false;
+var correct = false
+// points!!!
+var points = {
+  correct: 0,
+  total: 0
+}
 // COUNTRIES/COORDS DATA
 const geoData = [  
     {country:"Qatar", cont: "Asia", lat: 25.272234, lng: 51.421210},
@@ -77,14 +129,14 @@ async function initialize() {
     country = coordData.country
     // store the lat and lng so street view can display
     var coords = { lat:  coordData.lat, lng: coordData.lng }
-    console.log(coords)
 
-    const map = new google.maps.Map(document.getElementById("map"), {
+    // create map
+    var map = new google.maps.Map(document.getElementById("map"), {
         center: coords,
         zoom: 14,
     });
     // create new street view and adjust the coords, pov
-    const panorama = new google.maps.StreetViewPanorama(
+    var panorama = new google.maps.StreetViewPanorama(
       document.getElementById("pano"),
       {
         position: coords,
