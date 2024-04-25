@@ -60,9 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
   let regenBtn = document.getElementById('regenBtn')
   regenBtn.addEventListener('click', regen)
 
-  // CLEAR OUT THE TEXT IN USER INPUT SECTION
   // regenerate new map function
   function regen() {
+        // clear out whatever was in input box (previous guess)
+        document.getElementById('guess').value = ""
+
         // generate random coords with function
         var coordData = randomCoord()
 
@@ -178,6 +180,11 @@ generating random coordinates, have to fake randomness
 
 /*
 NEXT STEPS AS I KEEP WORKING 
+- make prettier
+- add more coords
+- hide api key
+- MEDIA QUERY
+- MAYBE a little more randomness.. by switching up the coords a bit
 */
 
 /*
