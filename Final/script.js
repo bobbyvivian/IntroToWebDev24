@@ -107,7 +107,7 @@ var points = {
 // COUNTRIES/COORDS DATA
 const geoData = [  
     {country:"Qatar", cont: "Asia", lat: 25.272234, lng: 51.421210},
-    {country:"United States of America", cont: "North America", lat: 40.668083, lng: -73.978557 },
+    {country:"United States", cont: "North America", lat: 40.668083, lng: -73.978557 },
     {country:"Canada", cont: "North America", lat: 49.166786, lng: -122.801385},  
     {country:"Russia", cont: "Asia", lat: 55.761226, lng: 37.594540},
     {country:"Kenya", cont: "Africa", lat: 0.552119, lng: 35.306452},
@@ -144,7 +144,7 @@ const geoData = [
     {country:"Germany", cont: "Europe", lat: 48.811937, lng: 9.201428},
     {country:"Ireland", cont: "Europe", lat: 53.336864, lng: -6.272377},
     {country:"United Kingdom", cont: "Europe", lat: 52.470919, lng: -1.896327},
-    // {country:"", cont: "", lat: , lng: },        
+    {country:"United States", cont: "North America", lat: 38.653047, lng: -121.539730},        
     // {country:"", cont: "", lat: , lng: },
     // {country:"", cont: "", lat: , lng: },
     // {country:"", cont: "", lat: , lng: },
@@ -159,9 +159,9 @@ const geoData = [
     // {country:"", cont: "", lat: , lng: },
     // {country:"", cont: "", lat: , lng: },
     // {country:"", cont: "", lat: , lng: },        
-
 ]
 
+// All the countries in the world
 const countryData = [
   'Afghanistan',
   'Albania',
@@ -417,21 +417,6 @@ address pops up with street view via api so i went into inspect to find the elem
 }
 
 generating random coordinates, have to fake randomness
-*/
-
-/*
-NEXT STEPS AS I KEEP WORKING 
-- make prettier
-- add more coords
-- hide api key
-- MEDIA QUERY
-- MAYBE a little more randomness.. by switching up the coords a bit
-*/
-
-/*
-COOl FEATURES I FOUND DURING PROCESS, SHARE WITH CLASS
-- goog maps api
-- datalist and options: dropdown menu for user input
 */
 
 /* 
