@@ -40,20 +40,6 @@ body {
 #mapCol {
     min-height: 500px;
 }
-/* .grid-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    min-height: 500px;
-    justify-content: center;
-}
-
-.grid-item {
-    position: relative;
-    flex: 0 0 48%;
-    overflow: hidden;
-    align-items: center;
-} */
 
 /* display none for now, change when correct/wrong in JS */
 .correct {
